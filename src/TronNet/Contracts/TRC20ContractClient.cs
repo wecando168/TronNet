@@ -18,6 +18,9 @@ using TronNet.Protocol;
 
 namespace TronNet.Contracts
 {
+    /// <summary>
+    /// TRC20 智能合约客户端
+    /// </summary>
     class TRC20ContractClient : IContractClient
     {
         private readonly ILogger<TRC20ContractClient> _logger;

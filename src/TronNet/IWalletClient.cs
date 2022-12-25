@@ -10,6 +10,10 @@ using TronNet.Protocol;
 
 namespace TronNet
 {
+    /// <summary>
+    /// 錢包客戶端接口
+    /// Wallet Client Interface
+    /// </summary>
     public interface IWalletClient
     {
         Wallet.WalletClient GetProtocol();

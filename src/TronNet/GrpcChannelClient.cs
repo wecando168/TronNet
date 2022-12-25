@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace TronNet
 {
+    /// <summary>
+    /// Google远程过程调用频道客户端
+    /// </summary>
     class GrpcChannelClient : IGrpcChannelClient
     {
         private readonly ILogger<GrpcChannelClient> _logger;

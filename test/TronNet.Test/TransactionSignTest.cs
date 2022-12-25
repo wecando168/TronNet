@@ -22,6 +22,10 @@ namespace TronNet.Test
             _wallet = _record.TronClient.GetWallet().GetProtocol();
         }
 
+        /// <summary>
+        /// 交易签名测试
+        /// </summary>
+        /// <returns></returns>
         [Fact]
         public async Task TestTransactionSignAsync()
         {
@@ -62,6 +66,13 @@ namespace TronNet.Test
             Assert.True(result.Result);
         }
 
+        /// <summary>
+        /// 交易测试
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <param name="amount"></param>
+        /// <returns></returns>
         private async Task<TransactionExtention> CreateTransactionAsync(string from, string to, long amount)
         {
 

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace TronNet.Accounts
 {
+    /// <summary>
+    /// 波场账户
+    /// </summary>
     public class TronAccount : ITronAccount
     {
         public string Address { get; protected set; }

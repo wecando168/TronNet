@@ -12,6 +12,9 @@ using TronNet.Protocol;
 
 namespace TronNet
 {
+    /// <summary>
+    /// 錢包客戶端
+    /// </summary>
     class WalletClient : IWalletClient
     {
         private readonly IGrpcChannelClient _channelClient;

@@ -7,6 +7,9 @@ using TronNet.Contracts;
 
 namespace TronNet
 {
+    /// <summary>
+    /// 波场客户端接口
+    /// </summary>
     public interface ITronClient
     {
         TronNetwork TronNetwork { get; }

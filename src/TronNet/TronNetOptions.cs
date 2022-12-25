@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace TronNet
 {
+    /// <summary>
+    /// 波场网络设置
+    /// </summary>
     public class TronNetOptions
     {
         public TronNetwork Network { get; set; }

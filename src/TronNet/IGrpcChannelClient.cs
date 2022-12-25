@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace TronNet
 {
+    /// <summary>
+    /// Google远程过程调用频道客户端接口
+    /// Google Remote Procedure Call Channel Client Interface
+    /// </summary>
     public interface IGrpcChannelClient
     {
         

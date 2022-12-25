@@ -7,6 +7,10 @@ using TronNet.Crypto;
 
 namespace TronNet
 {
+    /// <summary>
+    /// 波场ECKey：主要用于波场钱包地址生成
+    /// ECKey封装了椭圆曲线算法，初始化ECKey，即可获得一个密钥对。 
+    /// </summary>
     public class TronECKey
     {
         private readonly ECKey _ecKey;
@@ -47,6 +51,12 @@ namespace TronNet
             return _network == TronNetwork.MainNet ? 0x41 : 0xa0;
         }
 
+        /// <summary>
+        /// 创建钱包地址
+        /// </summary>
+        /// <param name="privateKey">私钥</param>
+        /// <param name="network">波场网络选择（默认为波场主网</param>
+        /// <returns></returns>
         public static string GetPublicAddress(string privateKey, TronNetwork network = TronNetwork.MainNet)
         {
             var key = new TronECKey(privateKey.HexToByteArray(), true, network);
@@ -54,6 +64,10 @@ namespace TronNet
             return key.GetPublicAddress();
         }
 
+        /// <summary>
+        /// 获取当前钱包地址
+        /// </summary>
+        /// <returns></returns>
         public string GetPublicAddress()
         {
             if (!string.IsNullOrWhiteSpace(_publicAddress)) return _publicAddress;
@@ -80,6 +94,11 @@ namespace TronNet
             }
             return _publicAddress;
         }
+
+        /// <summary>
+        /// 获取当前私钥
+        /// </summary>
+        /// <returns></returns>
         public string GetPrivateKey()
         {
             if (string.IsNullOrWhiteSpace(_privateKeyHex))
@@ -89,10 +108,13 @@ namespace TronNet
             return _privateKeyHex;
         }
 
+        /// <summary>
+        /// 获取当前公钥
+        /// </summary>
+        /// <returns></returns>
         public byte[] GetPubKey()
         {
             return _ecKey.GetPubKey();
         }
-
     }
 }

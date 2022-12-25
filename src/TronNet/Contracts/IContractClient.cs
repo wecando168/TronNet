@@ -7,6 +7,10 @@ using TronNet.Accounts;
 
 namespace TronNet.Contracts
 {
+    /// <summary>
+    /// 智能合约客户端接口
+    /// Contract Client Interface
+    /// </summary>
     public interface IContractClient
     {
         ContractProtocol Protocol { get; }
