@@ -7,6 +7,9 @@ using System.Numerics;
 
 namespace TronNet.Contracts
 {
+    /// <summary>
+    /// 合约消息基础
+    /// </summary>
     public abstract class ContractMessageBase
     {
         public BigInteger AmountToSend { get; set; }

@@ -15,6 +15,7 @@ namespace TronNet
     {
         /// <summary>
         /// 创建异步交易
+        /// <para><a href="https://cn.developers.tron.network/reference/createtransaction"/></para>
         /// </summary>
         /// <param name="from"></param>
         /// <param name="to"></param>
@@ -24,6 +25,7 @@ namespace TronNet
 
         /// <summary>
         /// 获取交易签名
+        /// <para><a href="https://cn.developers.tron.network/reference/gettransactionsign"/></para>
         /// </summary>
         /// <param name="transaction"></param>
         /// <param name="privateKey"></param>
@@ -32,6 +34,7 @@ namespace TronNet
 
         /// <summary>
         /// 广播异步交易
+        /// <para><a href="https://cn.developers.tron.network/reference/broadcasttransaction"/></para>
         /// </summary>
         /// <param name="transaction"></param>
         /// <returns></returns>
