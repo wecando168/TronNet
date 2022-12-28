@@ -9,6 +9,7 @@ namespace TronNet
     public enum TronNetwork
     {
         MainNet = 1,
-        TestNet = 2,
+        NileTestNet = 2,
+        ShastaTestNet = 3,
     }
 }
