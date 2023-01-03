@@ -12,14 +12,14 @@ using Xunit;
 
 namespace TronNet.Test
 {
-    public class TransactionTest
+    public class ShastaTestTransaction
     {
-        private readonly TronTestRecord _record;
+        private readonly TronShastaTestRecord _record;
         private readonly Wallet.WalletClient _wallet;
 
-        public TransactionTest()
+        public ShastaTestTransaction()
         {
-            _record = TronTestServiceExtension.GetTestRecord();
+            _record = TronShastaTestServiceExtension.GetTestRecord();
             _wallet = _record.TronClient.GetWallet().GetProtocol();
         }
 

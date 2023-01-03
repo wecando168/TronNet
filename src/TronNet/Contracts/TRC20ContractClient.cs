@@ -36,6 +36,12 @@ namespace TronNet.Contracts
             _transactionClient = transactionClient;
         }
 
+        /// <summary>
+        /// 获取代币精度
+        /// </summary>
+        /// <param name="wallet"></param>
+        /// <param name="contractAddressBytes"></param>
+        /// <returns></returns>
         private long GetDecimals(Wallet.WalletClient wallet, byte[] contractAddressBytes)
         {
             var trc20Decimals = new DecimalsFunction();
@@ -58,6 +64,16 @@ namespace TronNet.Contracts
             return new FunctionCallDecoder().DecodeOutput<long>(result, new Parameter("uint8", "d"));
         }
 
+        /// <summary>
+        /// Transfer 方法
+        /// </summary>
+        /// <param name="contractAddress"></param>
+        /// <param name="ownerAccount"></param>
+        /// <param name="toAddress"></param>
+        /// <param name="amount"></param>
+        /// <param name="memo"></param>
+        /// <param name="feeLimit"></param>
+        /// <returns></returns>
         public async Task<string> TransferAsync(string contractAddress, ITronAccount ownerAccount, string toAddress, decimal amount, string memo, long feeLimit)
         {
             var contractAddressBytes = Base58Encoder.DecodeFromBase58Check(contractAddress);
@@ -134,7 +150,12 @@ namespace TronNet.Contracts
         }
 
 
-
+        /// <summary>
+        /// 获取 TRC20 持有者余额信息
+        /// </summary>
+        /// <param name="contractAddress"></param>
+        /// <param name="ownerAccount"></param>
+        /// <returns></returns>
         public async Task<decimal> BalanceOfAsync(string contractAddress, ITronAccount ownerAccount)
         {
             var contractAddressBytes = Base58Encoder.DecodeFromBase58Check(contractAddress);

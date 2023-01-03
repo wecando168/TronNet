@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TronNet.Protocol", "src\TronNet.Protocol\TronNet.Protocol.csproj", "{2787BE3F-B61E-439C-9CFC-A3E2D3D99489}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TronNet.Crypto.Test", "test\TronNet.Crypto.Test\TronNet.Crypto.Test.csproj", "{E8C12D48-4E2A-41C8-B7C2-607FB53F78DC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TronNet.Test", "test\TronNet.Test\TronNet.Test.csproj", "{81FBD414-722A-407B-99F2-84D83B11ABF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{1C54FED6-C896-4A7F-9C79-1211E9B7A03C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{81FBD414-722A-407B-99F2-84D83B11ABF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81FBD414-722A-407B-99F2-84D83B11ABF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81FBD414-722A-407B-99F2-84D83B11ABF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C54FED6-C896-4A7F-9C79-1211E9B7A03C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C54FED6-C896-4A7F-9C79-1211E9B7A03C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C54FED6-C896-4A7F-9C79-1211E9B7A03C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C54FED6-C896-4A7F-9C79-1211E9B7A03C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

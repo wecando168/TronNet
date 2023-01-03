@@ -8,8 +8,8 @@ using Microsoft.Extensions.Options;
 
 namespace TronNet.Test
 {
-    public record TronTestRecord(IServiceProvider ServiceProvider, ITronClient TronClient, IOptions<TronNetOptions> Options);
-    public static class TronTestServiceExtension
+    public record TronNileTestRecord(IServiceProvider ServiceProvider, ITronClient TronClient, IOptions<TronNetOptions> Options);
+    public static class TronNileTestServiceExtension
     {
         public static IServiceProvider AddTronNet()
         {
@@ -17,21 +17,21 @@ namespace TronNet.Test
             services.AddTronNet(x =>
             {
                 x.Network = TronNetwork.MainNet;
-                x.Channel = new GrpcChannelOption { Host = "grpc.shasta.trongrid.io", Port = 50051 };
-                x.SolidityChannel = new GrpcChannelOption { Host = "grpc.shasta.trongrid.io", Port = 50052 };
+                x.Channel = new GrpcChannelOption { Host = "grpc.nile.trongrid.io", Port = 50051 };
+                x.SolidityChannel = new GrpcChannelOption { Host = "grpc.nile.trongrid.io", Port = 50061 };
                 x.ApiKey = "";
             });
             services.AddLogging();
             return services.BuildServiceProvider();
         }
 
-        public static TronTestRecord GetTestRecord()
+        public static TronNileTestRecord GetTestRecord()
         {
-            var provider = TronTestServiceExtension.AddTronNet();
+            var provider = TronNileTestServiceExtension.AddTronNet();
             var client = provider.GetService<ITronClient>();
             var options = provider.GetService<IOptions<TronNetOptions>>();
 
-            return new TronTestRecord(provider, client, options);
+            return new TronNileTestRecord(provider, client, options);
         }
     }
 

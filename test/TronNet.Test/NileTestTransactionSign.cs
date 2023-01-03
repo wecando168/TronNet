@@ -12,13 +12,13 @@ using TronNet.Crypto;
 
 namespace TronNet.Test
 {
-    public class TransactionSignTest
+    public class NileTestTransactionSign
     {
-        private readonly TronTestRecord _record;
+        private readonly TronNileTestRecord _record;
         private readonly Wallet.WalletClient _wallet;
-        public TransactionSignTest()
+        public NileTestTransactionSign()
         {
-            _record = TronTestServiceExtension.GetTestRecord();
+            _record = TronNileTestServiceExtension.GetTestRecord();
             _wallet = _record.TronClient.GetWallet().GetProtocol();
         }
 
@@ -27,7 +27,7 @@ namespace TronNet.Test
         /// </summary>
         /// <returns></returns>
         [Fact]
-        public async Task TestTransactionSignAsync()
+        public async Task TestNileTransactionSignAsync()
         {
             var privateStr = "8e812436a0e3323166e1f0e8ba79e19e217b2c4a53c970d4cca0cfb1078979df";
             var tronKey = new TronECKey(privateStr, _record.Options.Value.Network);
@@ -35,7 +35,7 @@ namespace TronNet.Test
             var to = "TGehVcNhud84JDCGrNHKVz9jEAVKUpbuiv";
             var amount = 100_000_000L; // 100 TRX, api only receive trx in Sun, and 1 trx = 1000000 Sun
 
-            var transactionExtension = await CreateTransactionAsync(from, to, amount);
+            var transactionExtension = await CreateNileTransactionAsync(from, to, amount);
 
             Assert.True(transactionExtension.Result.Result);
 
@@ -54,7 +54,7 @@ namespace TronNet.Test
 
             var transactionBytes = transaction.ToByteArray();
 
-            var transaction4 = SignTransaction2Byte(transactionBytes, privateStr.HexToByteArray(), transactionSigned);
+            var transaction4 = NileTestTransactionSign2Byte(transactionBytes, privateStr.HexToByteArray(), transactionSigned);
 
 
             var transaction5 = transactionSigned.ToByteArray();
@@ -73,7 +73,7 @@ namespace TronNet.Test
         /// <param name="to"></param>
         /// <param name="amount"></param>
         /// <returns></returns>
-        private async Task<TransactionExtention> CreateTransactionAsync(string from, string to, long amount)
+        private async Task<TransactionExtention> CreateNileTransactionAsync(string from, string to, long amount)
         {
 
             var fromAddress = Base58Encoder.DecodeFromBase58Check(from);
@@ -129,7 +129,7 @@ namespace TronNet.Test
         }
 
 
-        private byte[] SignTransaction2Byte(byte[] transaction, byte[] privateKey, Transaction transactionSigned)
+        private byte[] NileTestTransactionSign2Byte(byte[] transaction, byte[] privateKey, Transaction transactionSigned)
         {
             var ecKey = new ECKey(privateKey, true);
             var transaction1 = Transaction.Parser.ParseFrom(transaction);

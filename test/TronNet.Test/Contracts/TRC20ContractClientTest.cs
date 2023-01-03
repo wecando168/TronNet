@@ -11,13 +11,13 @@ namespace TronNet.Test.Contracts
 {
     public class TRC20ContractClientTest
     {
-        private TronTestRecord _record;
+        private TronNileTestRecord _record;
         private IWalletClient _wallet;
         private IContractClientFactory _contractClientFactory;
 
         public TRC20ContractClientTest()
         {
-            _record = TronTestServiceExtension.GetTestRecord();
+            _record = TronNileTestServiceExtension.GetTestRecord();
             _wallet = _record.ServiceProvider.GetService<IWalletClient>();
             _contractClientFactory = _record.ServiceProvider.GetService<IContractClientFactory>();
         }
