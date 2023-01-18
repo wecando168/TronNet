@@ -21,6 +21,7 @@ TronNet makes it easy to build TRON applications with .net.</Description>
 
   <ItemGroup>
     <ProjectReference Include="..\TronNet.ABI\TronNet.ABI.csproj" />
+    <ProjectReference Include="..\TronNet.Crypto\TronNet.Crypto.csproj" />
     <ProjectReference Include="..\TronNet.Protocol\TronNet.Protocol.csproj" />
   </ItemGroup>
 
